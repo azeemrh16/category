@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mongo
-  namespace: [student-name]
+  namespace: delta
   labels:
     app: mongo
 spec:
@@ -21,7 +21,7 @@ spec:
             - containerPort: 27017
           volumeMounts:
             - name: storage
-              mountPath: /data/db
+              mountPath: /data/db-delta
       volumes:
         - name: storage
           persistentVolumeClaim:
